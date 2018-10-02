@@ -6,13 +6,13 @@
 using namespace std;
 
 
-typedef enum _CARD_SUIT
-{
-	club = 0;
-	diamond,
-	heart,
-	spade
-} suit_type;
+// typedef enum _CARD_SUIT
+// {
+// 	club = 0;
+// 	diamond,
+// 	heart,
+// 	spade
+// } suit_type;
 
 class Card
 {
@@ -37,3 +37,4 @@ ostream& operator<< (ostream& ostr, const Card& card)
 	ostr << "Your card is the " << card.translateValue() << " of " << card.translateSuit() << endl;
 	return ostr;
 }
+#endif

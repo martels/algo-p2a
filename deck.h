@@ -1,19 +1,23 @@
+#ifndef DECK_H
+#define DECK_H
 #include "list.h"
 #include <stdlib.h>
+
+using namespace std;
 
 class Deck
 {
 private:
-	list<Card> block;
-
+	List block;
 public:
 	Deck();
 void shuffle();
 Card getTop() const;
-list<Card> getList() const;
+List getList() const;
 };
 
-std::ostream& operator<< (std::ostream& ostr, const Deck& deck)
-{
+// ostream& operator<< (ostream& ostr, const Deck& deck)
+// {
 	
-}
+// }
+#endif

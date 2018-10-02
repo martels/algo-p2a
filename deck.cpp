@@ -1,10 +1,20 @@
 #include "deck.h"
 
-using namespace Deck;
+using namespace std;
 
 Deck()
 {
-
+	List block; 
+	for(int k = 0; k < 4; k++)
+	{
+		for(int i = 0; i < 13; i++)
+		{
+			Card temp(i+1, k);
+			block.push_frontList(temp);
+		}
+	}
+	block.pop_frontList();
+	block.printList();
 }
 
 void shuffle()
@@ -14,10 +24,10 @@ void shuffle()
 
 Card getTop()
 {
-	return block.front();
+	return block.get_frontList();
 }
 
-list<Card> getList()
+List getList()
 {
-
+	return block;
 }
