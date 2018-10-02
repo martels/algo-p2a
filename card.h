@@ -1,6 +1,7 @@
 #ifndef CARD_H
 #define CARD_H
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -15,46 +16,24 @@ typedef enum _CARD_SUIT
 
 class Card
 {
-	private:
-	int value;
-	suit_type suit;
+		private:
+		int value;
+		int suit;
 
-	public:
-	Card();
-	Card(int v, suit_type s);
-int	getValue() const;
-suit_type	getSuit() const;
-void	setValue(int v);
-void	setSuit(int s);
+		public:
+		Card();
+		Card(int v, int s);
+inline int getValue() const;
+inline int getSuit() const;
+inline void	setValue(int v);
+inline void	setSuit(int s);
+char	translateValue() const;
+string	translateSuit() const;
 
 };
 
-
-	char val = '0';
-	if(card.getValue() == 1)
-	{
-		val = 'A';
-	}
-
-	else if(card.getValue() == 11)
-	{
-		val = 'J';
-	}
-
-	else if(card.getValue() == 12)
-	{
-		val = 'Q';
-	}
-
-	else if(card.getValue() == 13)
-	{
-		val = 'K';
-	}
-	else
-		val = card.getValue();
-	ostr << "Your card is the" << val << " of " << card.getSuit() << endl;
+ostream& operator<< (ostream& ostr, const Card& card)
+{
+	ostr << "Your card is the " << card.translateValue() << " of " << card.translateSuit() << endl;
 	return ostr;
 }
-
-
-
