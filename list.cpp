@@ -10,6 +10,7 @@ List(Card n)
 	head = newval;
 	tail = newval;
 	cursor = newval;
+	size = 1;
 }
 
 List()
@@ -19,6 +20,7 @@ List()
 	head = newval;
 	tail = newval;
 	cursor = newval;
+	size = 1;
 }
 
 void push_backList(Card n)
@@ -30,6 +32,7 @@ void push_backList(Card n)
 	tail->next = newval;
 	tail = newval;
 	cursor = tail;
+	size++;
 }
 
 void push_frontList(Card n)
@@ -41,6 +44,7 @@ void push_frontList(Card n)
 	head->prev = newval;
 	head = newval;
 	cursor = head;
+	size++;
 }
 
 node<Card>* pop_backList()
@@ -54,6 +58,7 @@ node<Card>* pop_backList()
 	tail = cursor;
 	cursor->next = NULL;
 	return temp;
+	size--;
 }
 
 node<Card>* pop_frontList()
@@ -67,6 +72,7 @@ node<Card>* pop_frontList()
 	head = cursor;
 	cursor->prev = NULL;
 	return temp;
+	size--;
 }
 
 
