@@ -4,9 +4,6 @@ flipcard: deck.o list.o card.o main.o
 card.o: card.cpp
 	g++ -Wall -c card.cpp
 
-list.o: list.cpp
-	g++ -Wall -c list.cpp
-
 deck.o: deck.cpp
 	g++ -Wall -c deck.cpp
 
