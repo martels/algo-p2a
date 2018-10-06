@@ -1,5 +1,5 @@
-flipcard: deck.o list.o card.o main.o
-	g++ deck.o list.o card.o main.o
+flipcard: deck.o card.o main.o
+	g++ deck.o card.o main.o
 
 card.o: card.cpp
 	g++ -Wall -c card.cpp
@@ -11,4 +11,4 @@ main.o: main.cpp
 	g++ -Wall -c main.cpp
 
 clean:
-	rm main.o list.o deck.o card.o flipcard
+	rm main.o deck.o card.o flipcard

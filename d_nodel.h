@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-#include "d_node.h"		// use node class
+//#include "d_node.h"		// use node class
 #include "d_dnode.h"		// use dnode class
 
 using namespace std;

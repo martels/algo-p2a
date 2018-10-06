@@ -3,17 +3,6 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
-
-// typedef enum _CARD_SUIT
-// {
-// 	club = 0;
-// 	diamond,
-// 	heart,
-// 	spade
-// } suit_type;
-
 class Card
 {
 		private:
@@ -31,6 +20,8 @@ char	translateValue() const;
 string	translateSuit() const;
 
 };
+
+using namespace std;
 
 ostream& operator<< (ostream& ostr, const Card& card)
 {
