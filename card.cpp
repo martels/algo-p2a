@@ -1,41 +1,20 @@
 
 #include "card.h"
 
-using namespace Card;
 
-Card()
+Card::Card()
 {
 	value = 0;
 	suit = 0;
 }
 
-Card(int v, int s);
+Card::Card(int v, int s)
 {
 	value = v;
 	suit = s;
 }
 
-inline int getValue() const
-{
-	return value;
-}
-
-inline int getSuit() const
-{
-	return suit;
-}
-
-inline void setValue(int v)
-{
-	value = v;
-}
-
-inline void setSuit(int s)
-{
-	suit = s;
-}
-
-char translateValue() const
+char Card::translateValue() const
 {
 	char val = 0;
 	if(value == 1)
@@ -50,9 +29,10 @@ char translateValue() const
 		val = value;
 	return val;
 }
-string translateSuit() const
+
+std::string Card::translateSuit() const
 {
-	string s;
+	std::string s;
 	if(suit == 0)
 		s = "Clubs";
 	else if(suit == 1)
@@ -63,3 +43,4 @@ string translateSuit() const
 		s = "Spades";
 	return s;
 }
+

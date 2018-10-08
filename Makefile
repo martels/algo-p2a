@@ -1,5 +1,5 @@
 flipcard: deck.o card.o main.o
-	g++ deck.o card.o main.o
+	g++ deck.o card.o main.o -o flipcard
 
 card.o: card.cpp
 	g++ -Wall -c card.cpp

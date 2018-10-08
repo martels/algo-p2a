@@ -227,6 +227,20 @@ void Deck::print_Deck()
 		std::cout << std::endl << std::endl;
 	}
 }
+void Deck::standard_Deck()
+{
+	Card temp;
+	for(int i = 0; i < 4; i++)
+	{
+		temp.setSuit(i);
+		for(int k = 1; k <= 13; k++)
+		{
+			temp.setValue(k);
+			push_back_Deck(temp);
+		}
+	}
+	return;
+}
 
 Deck Deck::shuffle_Deck()
 {

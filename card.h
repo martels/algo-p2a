@@ -1,7 +1,9 @@
+
+#include <string>
+#include <iostream>
 #ifndef CARD_H
 #define CARD_H
-#include <iostream>
-#include <string>
+
 
 class Card
 {
@@ -12,20 +14,19 @@ class Card
 		public:
 		Card();
 		Card(int v, int s);
-inline int getValue() const;
-inline int getSuit() const;
-inline void	setValue(int v);
-inline void	setSuit(int s);
+inline int getValue() const {return value;}
+inline int getSuit() const {return suit;}
+inline void	setValue(int v) {value = v;}
+inline void	setSuit(int s) {suit = s;}
 char	translateValue() const;
-string	translateSuit() const;
-
+std::string	translateSuit() const;
 };
 
-using namespace std;
-
-ostream& operator<< (ostream& ostr, const Card& card)
+inline std::ostream& operator<< (std::ostream& ostr, const Card& card)
 {
+	using namespace std;
 	ostr << "Your card is the " << card.translateValue() << " of " << card.translateSuit() << endl;
 	return ostr;
 }
+
 #endif
