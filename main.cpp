@@ -9,6 +9,7 @@ int main()
 {
 	Deck deck;
 	deck.print();
+	cout << endl << endl << "Shuffling Deck...." << endl << endl;
     deck.shuffle();
     deck.print();
     

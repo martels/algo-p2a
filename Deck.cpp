@@ -1,6 +1,6 @@
-//Barry Yung
-//Samual Martel
-//Algos Project2a
+// Barry Yung
+// Samual Martel
+// Algos Project2a
 #include "Deck.h"
 
 #include <iostream>
@@ -10,9 +10,13 @@
 
 using namespace std;
 
-//Deck Functions
+//------Deck Functions-------
+
+
+
+//Deck constructor
 Deck::Deck()
-    {
+{
     head = NULL;
     vector<string> suits = { "Clubs" , "Diamonds", "Hearts", "Spades"};
     vector<string> values = { "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2", "A" };
@@ -29,9 +33,9 @@ Deck::Deck()
 
 //destructor
  Deck::~Deck()
-    {
-     cout << "Deleted Deck";
- }
+{
+     cout << "Deleted Deck" << endl;
+}
 
 //puts each card into the linked list Deck
 void Deck::addCard(card& card)
@@ -42,7 +46,7 @@ void Deck::addCard(card& card)
     this->head = node;
 };
 
-
+//Shuffles Deck
 void Deck::shuffle()
 {
     srand(time(0)); //time for rand()
@@ -58,16 +62,18 @@ void Deck::shuffle()
         temp.at(i) = cursor->data;
         cursor = cursor->next;
     }
+
     for(int i = 0; i < 1000; i++)
     {
-        rnd1 = rand()%52;
-        rnd2 = rand()%52;
-        ex1 = temp.at(rnd1);
+        rnd1 = rand()%52;   //generate two random numbers
+        rnd2 = rand()%52;   
+        ex1 = temp.at(rnd1); //take the cards at the numbers
         ex2 = temp.at(rnd2);
         
-        temp.at(rnd1) = ex2;  //randomize suits
-        temp.at(rnd2) = ex1; //randomize values
+        temp.at(rnd1) = ex2;    //swap the numbers
+        temp.at(rnd2) = ex1;    
     }
+
     cursor = head;
     for(int i = 0; i < 52; i++) //place vector back into linked list
     {
@@ -78,7 +84,8 @@ void Deck::shuffle()
 }
 
 
- void Deck::print() {
+void Deck::print() 
+{
      Node* head = this->head;
      int i = 1;
      while (head) {
@@ -94,19 +101,23 @@ void Deck::shuffle()
 
 
 // Card Functions
-void card::setValue(string sValue) {
+void card::setValue(string sValue) 
+{
     value = sValue;
 }
 
-void card::setSuit(string sSuit) {
+void card::setSuit(string sSuit) 
+{
     suit = sSuit;
 }
 
-string card::getSuit() {
+string card::getSuit() 
+{
     return suit;
 }
 
-string card::getValue() {
+string card::getValue() 
+{
     return value;
 }
 

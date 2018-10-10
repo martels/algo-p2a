@@ -1,5 +1,6 @@
 //Barry Yung
 //Samual Martel
+//9 OCT 2018
 //Algos Project2a
 #ifndef Deck_h
 #define Deck_h
@@ -11,41 +12,41 @@
 using namespace std;
 
 
-class card{
+class card
+{
     
 public:
-    card(string sValue, string sSuit) {value = sValue; suit = sSuit;}; //class constructor
-    
-    void setValue(string sValue);
-    void setSuit(string sSuit);
-    string getSuit();
-    string getValue();
+    card(string sValue, string sSuit) {value = sValue; suit = sSuit;};              //class constructor
+    void setValue(string sValue);                                                   //sets value to the passed value
+    void setSuit(string sSuit);                                                     //sets suit to passed suit
+    string getSuit();                                                               //returns suit
+    string getValue();                                                              //returns suit
     
     
 private:
-    string value;
+    string value;  
     string suit;
 };
 
-class Node {
+class Node 
+{
      public:
          Node() {};
-         Node* next;
-         card* data;
-     
- };
+         Node* next;                                                                //pointer to the next value in the list
+          card* data;     
+};
  
 
-class Deck {
+class Deck 
+{
     public:
-        Node* head;
-        int length;
-        Deck();
-        ~Deck();
-        void addCard(card& card);
-        void shuffle();
-        void print();
-
+        Node* head;                                                                 //head of the list
+        int length;                                                                 //length of the list
+        Deck();                                                                     //class constructor
+        ~Deck();                                                                    //class deconstrutor
+        void addCard(card& card);                                                   //adds the passed card address
+        void shuffle();                                                             //shuffles the cards
+        void print();                                                               //prints out the deck
 };
 
 
